@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "悄悄-在线聊天漂流瓶",
-  description: "爱聊是一个面向Z世代的在线匿名随机聊天移动社交平台。漂流瓶、随机聊天，同城匹配，快速开始一对一私密聊天。",
+  title: "xxxx-企业官网模版",
+  description: "企业官网模版说明，企业官网模版说明，企业官网模版说明，企业官网模版说明，企业官网模版说明",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
