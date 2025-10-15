@@ -1,4 +1,11 @@
 /* 通用 */
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+}
 
 /* 手机 */
 @media (max-width: 767px) {}
