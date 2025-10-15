@@ -3,13 +3,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20">
+    <div className="font-sans p-8 pb-20 border border-blue-500">
       <main className="flex flex-col gap-[32px] row-start-2 sm:items-start">
-        11
-        
       </main>
-
-      <Footer />
     </div>
   );
 }
