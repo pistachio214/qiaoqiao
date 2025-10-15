@@ -1,0 +1,40 @@
+ .footerWrapper {
+     width: 100%;
+     border: 1px solid red;
+     padding: 12px 16px;
+     display: flex;
+
+     .provider,
+     .hint {
+         font-size: 0.5rem;
+         color: hsla(0, 0%, 86.3%, 0.3);
+     }
+ }
+
+
+ /* 手机 */
+ @media (max-width: 767px) {
+     .footerWrapper {
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+     }
+ }
+
+ /* 平板 */
+ @media (min-width: 768px) and (max-width: 1023px) {
+     .footerWrapper {
+         justify-content: center;
+         align-items: center;
+         flex-direction: row;
+     }
+ }
+
+ /* 桌面 */
+ @media (min-width: 1024px) {
+     .footerWrapper {
+         justify-content: center;
+         align-items: center;
+         flex-direction: row;
+     }
+ }

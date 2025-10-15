@@ -1,6 +1,7 @@
 // import type { Metadata } from "next";
 
-import Footer from "@/components/custom/Footer";
+import MenuList from "@/components/Layout/MenuList";
+
 
 import style from './layout.module.scss';
 
@@ -13,11 +14,12 @@ import style from './layout.module.scss';
 // 页面公共区域
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <div className="flex flex-row min-h-screen border border-red-500">
-            <div className={`min-h-screen ${style.menuList}`}>menu list</div>
-            <div className="flex flex-col">
-                {children}
-                <Footer />
+        <div className="flex flex-row min-h-screen">
+            <MenuList />
+            <div className="flex flex-col max-h-screen overflow-y-auto w-[100%]">
+                <div className="flex-1">
+                    {children}
+                </div>
             </div>
         </div>
     );
