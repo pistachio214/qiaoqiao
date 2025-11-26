@@ -3,13 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "deploy": "npm run build && node deploy.js",
+    "start": "node .next/standalone/server.js",
+    "lint": "eslint",
+    "preinstall": "npx only-allow npm"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource/roboto": "^5.2.9",
+    "@mui/icons-material": "^7.3.5",
+    "@mui/material": "^7.3.5",
+    "@mui/material-nextjs": "^7.3.5",
     "next": "16.0.4",
+    "next-themes": "^0.4.6",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
@@ -20,6 +30,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.4",
+    "fs-extra": "^11.3.2",
+    "only-allow": "^1.2.1",
+    "sass": "^1.94.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
