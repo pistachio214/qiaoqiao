@@ -2,20 +2,12 @@
 
 import { useState } from 'react';
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import {
+    AppBar, Container, Drawer, IconButton, Typography, Toolbar, Box,
+    List, ListItem, ListItemButton, ListItemIcon, ListItemText,
+    Divider
+} from '@mui/material';
 
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import ManageSearchOutlinedIcon from '@mui/icons-material/ManageSearchOutlined';
@@ -61,17 +53,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
     return (
         <>
-            <Box sx={{ flexGrow: 1}}>
-                <AppBar position="static">
+            <Box className='flex flex-col' sx={{ flexGrow: 1, minHeight: '-webkit-fill-available;' }}>
+                <AppBar position="static" elevation={0} color='transparent'>
                     <Toolbar>
                         <IconButton
                             edge="start"
-                            color="inherit"
                             aria-label="menu"
-                            sx={{ mr: 2 }}
+                            color="inherit"
+                            sx={{ mr: 2, color: '#ffffff' }}
                             onClick={() => { toggleDrawer(true) }}
                         >
-                        
                             <MenuOutlinedIcon fontSize='inherit' />
                         </IconButton>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -80,21 +71,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                         <IconButton
                             edge="end"
                             color="inherit"
+                            sx={{ color: '#ffffff' }}
                         >
                             <ManageSearchOutlinedIcon fontSize='inherit' />
                         </IconButton>
                     </Toolbar>
                 </AppBar>
-            </Box>
 
+                <Container component={'div'} className='flex-1 flex'>
+                    {children}
+                </Container>
+            </Box>
             <Drawer open={open} onClose={() => toggleDrawer(false)}>
                 {DrawerList}
             </Drawer>
-
-            <div>
-                root layout
-                {children}
-            </div>
         </>
     );
 }
