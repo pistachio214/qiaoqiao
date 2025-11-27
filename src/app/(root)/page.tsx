@@ -1,13 +1,15 @@
 import Image from "next/image";
 
-import { Container, Paper, Box, Typography, Button } from "@mui/material";
+import { Container, Paper, Box, Typography } from "@mui/material";
 
-import SexSelect from "@/components/SexSelect";
+import SexSelect from "@/components/Root/SexSelect";
+import EnterChat from "@/components/Root/EnterChat";
 import Footer from "@/components/Footer";
 
 import styles from './page.module.scss';
 
 export default function Home() {
+
   return (
     <Paper elevation={0} component={'div'} className={`flex-1 flex flex-col ${styles.wrapper}`}>
       <Container className="flex-1 flex flex-col justify-between">
@@ -25,11 +27,8 @@ export default function Home() {
 
         <SexSelect />
 
-        <Box className={styles.chatBox}>
-          <Button variant="contained" fullWidth className={styles.chatBtn}>
-            进入聊天
-          </Button>
-        </Box>
+        <EnterChat />
+
       </Container>
 
       <Footer />

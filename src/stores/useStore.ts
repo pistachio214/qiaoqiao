@@ -1,19 +1,26 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage, devtools } from 'zustand/middleware'
-import { AgeOption } from '@/types/age';
-import { ageOptions } from '@/lib/data';
+import { Option } from '@/types/option';
+import { ageOptions, sexOptions } from '@/lib/data';
 
 interface AppState {
-    age: AgeOption
+    mate: {
+        age: Option,
+        sex: Option,
+    }
 
     // Actions
-    setAge: (age: AgeOption) => void
+    updateMateAge: (age: Option) => void
+    updateMateSex: (sex: Option) => void
     reset: () => void
 }
 
 // 在服务端安全的初始化函数
 const getDefaultInitialState = () => ({
-    age: ageOptions[0]
+    mate: {
+        age: ageOptions[0],
+        sex: sexOptions[0],
+    }
 })
 
 const useAppStore = create<AppState>()(
@@ -21,7 +28,12 @@ const useAppStore = create<AppState>()(
         persist(
             (set, get) => ({
                 ...getDefaultInitialState(),
-                setAge: (age) => set({ age }),
+                updateMateAge: (age: Option) => set((state) => ({
+                    mate: { ...state.mate, age }
+                })),
+                updateMateSex: (sex: Option) => set((state) => ({
+                    mate: { ...state.mate, sex }
+                })),
                 reset: () => set(getDefaultInitialState()),
             }),
             {
@@ -39,7 +51,7 @@ const useAppStore = create<AppState>()(
                 }),
                 // 可选：只持久化部分状态
                 partialize: (state) => ({
-                    age: state.age,
+                    mate: state.mate,
                 }),
             }
         )

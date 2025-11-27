@@ -11,10 +11,10 @@ import { FemaleOutlined, MaleOutlined } from "@mui/icons-material";
 
 import classNames from "classnames";
 import useAppStore from "@/stores/useStore";
-import { AgeOption } from "@/types/age";
-import { ageOptions } from "@/lib/data";
+import { Option } from "@/types/option";
+import { ageOptions, sexOptions } from "@/lib/data";
 
-import styles from './sexSelect.module.scss';
+import styles from './SexSelect.module.scss';
 
 const radioColor = {
     color: 'var(--radio-unchecked-color)', // 默认颜色
@@ -28,14 +28,13 @@ const radioColor = {
 
 export default function SexSelect() {
 
-    const { age, setAge } = useAppStore();
+    const { mate, updateMateAge, updateMateSex } = useAppStore();
 
-    const [sex, setSex] = useState(1);
     const [open, setOpen] = useState(false);
-    const [ageType, setAgeType] = useState<AgeOption>(ageOptions[0]);
+    const [ageType, setAgeType] = useState<Option>(ageOptions[0]);
 
     const onOpenAgeDrawer = () => {
-        setAgeType(age);
+        setAgeType(mate.age);
         setOpen(true);
     }
 
@@ -43,8 +42,8 @@ export default function SexSelect() {
         setOpen(false);
     }
 
-    const saveAge = (age: AgeOption) => {
-        setAge(age);
+    const saveAge = (age: Option) => {
+        updateMateAge(age);
         onCloseAgeDrawer();
     }
 
@@ -52,26 +51,34 @@ export default function SexSelect() {
         <>
             <Box className={styles.sexBox}>
                 <Container className={styles.sexBoxContainer}>
-                    <Box
-                        className={
-                            classNames(styles['sex-box'], {
-                                [styles['sex-box-active']]: sex === 1
-                            })
-                        }
-                        onClick={() => setSex(1)}
-                    >
-                        <MaleOutlined fontSize={'large'} />
-                    </Box>
-                    <Box
-                        className={
-                            classNames(styles['sex-box'], {
-                                [styles['sex-box-active']]: sex === 2
-                            })
-                        }
-                        onClick={() => setSex(2)}
-                    >
-                        <FemaleOutlined fontSize={'large'} />
-                    </Box>
+                    {
+                        sexOptions.map((item: Option, index: number) => {
+                            return (
+                                <Box
+                                    key={index}
+                                    className={
+                                        classNames(styles['sex-box'], {
+                                            [styles['sex-box-active']]: mate.sex.value === item.value
+                                        })
+                                    }
+                                    onClick={() => {
+                                        updateMateSex(sexOptions[index])
+                                    }}
+                                >
+                                    {
+                                        item.value === 1 ? <MaleOutlined fontSize={'large'} /> : <FemaleOutlined fontSize={'large'} />
+                                    }
+
+                                    <Typography sx={{
+                                        paddingTop: '18px',
+                                        fontSize: '0.8rem'
+                                    }}>
+                                        我是{item.label}生
+                                    </Typography>
+                                </Box>
+                            )
+                        })
+                    }
                 </Container>
                 <Container className={styles.sexBoxAgeContainer}>
                     <Button
@@ -79,7 +86,7 @@ export default function SexSelect() {
                         className={styles.sexSelectBtn}
                         onClick={() => onOpenAgeDrawer()}
                     >
-                        年龄: {age.label}
+                        年龄: {mate.age.label}
                     </Button>
                 </Container>
             </Box>
@@ -119,7 +126,7 @@ export default function SexSelect() {
                         name="radio-buttons-group"
                     >
                         {
-                            ageOptions.map((item: AgeOption, index: number) => {
+                            ageOptions.map((item: Option, index: number) => {
                                 return (
                                     <FormControlLabel
                                         key={index}
