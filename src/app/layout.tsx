@@ -20,6 +20,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  icons: '/logo.svg',
   title: "悄悄-在线聊天漂流瓶-随机社交聊天平台",
   keywords: '悄悄,匿名聊天,悄悄聊,随机聊天,漂流瓶,陌路人',
   description: "悄悄是一个面向Z世代的在线匿名随机聊天移动社交平台。漂流瓶、随机聊天，快速开始一对一私密聊天。",

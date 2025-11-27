@@ -1,4 +1,49 @@
-
 .wrapper {
     justify-content: space-between;
+    background-color: transparent;
+}
+
+.title-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 12px;
+}
+
+.title-text {
+    font-size: 18px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 6px;
+    margin-right: 6px;
+    background-color: var(--online-color);
+}
+
+.desc {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+.chatBox {
+    display: flex;
+    justify-content: center;
+}
+
+.chatBtn {
+    border-radius: 18px;
+    height: 45px;
+    color: #000000;
+    background-color: #ffffff;
 }
