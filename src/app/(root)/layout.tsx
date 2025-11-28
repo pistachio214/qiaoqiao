@@ -86,7 +86,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     </Toolbar>
                 </AppBar>
 
-                <Container component={'div'} className='flex-1 flex'>
+                <Container component={'div'} className='flex-1 flex' sx={{
+                    paddingLeft: 0,
+                    paddingRight: 0,
+                }}>
                     {children}
                 </Container>
             </Box>

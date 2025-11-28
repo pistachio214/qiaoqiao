@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,5 +6,12 @@ export const metadata: Metadata = {
 };
 
 export default function ChatLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-    return children;
+    return (
+        <Container className="flex-1 flex" sx={{
+            paddingLeft: 0,
+            paddingRight: 0,
+        }}>
+            {children}
+        </Container>
+    );
 }
