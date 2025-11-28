@@ -61,12 +61,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                             aria-label="menu"
                             color="inherit"
                             sx={{ mr: 2, color: '#ffffff' }}
-                            onClick={() => { toggleDrawer(true) }}
+                            onClick={() => toggleDrawer(true)}
                         >
                             <MenuOutlinedIcon fontSize='inherit' />
                         </IconButton>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            {/* News */}
+                        <Typography
+                            // variant="h6"
+                            component="div"
+                            sx={{
+                                flexGrow: 1,
+                                color: '#fff',
+                                textAlign: 'center'
+                            }}
+                        >
+                            qiaoqiao
                         </Typography>
                         <IconButton
                             edge="end"

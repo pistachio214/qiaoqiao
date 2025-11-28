@@ -1,0 +1,25 @@
+
+.wrapper {
+    background-color: transparent;
+    border: 1px solid red;
+    padding-left: 0 !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.messageBox {
+    flex: 1;
+}
+
+.btnBox {
+    padding: 0.8rem;
+    background-color: #212121;
+}
+
+.btn {
+    border-radius: 12px;
+}
