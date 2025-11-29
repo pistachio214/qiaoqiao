@@ -1,0 +1,8 @@
+.messageBox {
+    height: calc(100vh - 8rem);
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
