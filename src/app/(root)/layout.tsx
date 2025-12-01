@@ -53,7 +53,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
     return (
         <>
-            <Box className='flex flex-col' sx={{ flexGrow: 1, minHeight: '-webkit-fill-available;' }}>
+            <Box
+                className='flex flex-col'
+                sx={{
+                    flexGrow: 1,
+                    minHeight: '-webkit-fill-available',
+                    height: '100vh',
+                }}
+            >
                 <AppBar position="static" elevation={0} color='transparent'>
                     <Toolbar>
                         <IconButton
@@ -86,10 +93,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     </Toolbar>
                 </AppBar>
 
-                <Container component={'div'} className='flex-1 flex' sx={{
-                    paddingLeft: 0,
-                    paddingRight: 0,
-                }}>
+                <Container
+                    component={'div'}
+                    className='flex-1 flex'
+                    sx={{
+                        paddingLeft: 0,
+                        paddingRight: 0,
+                    }}
+                >
                     {children}
                 </Container>
             </Box>

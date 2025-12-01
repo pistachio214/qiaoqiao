@@ -1,0 +1,23 @@
+.messageItem {
+    color: var(--font-color-focus3);
+    max-width: 88%;
+    user-select: none;
+}
+
+.otherMessage {
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    background-color: var(--chat-receive-bg);
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+}
+
+.myMessage {
+    align-self: flex-end;
+    background-color: var(--card-active);
+    color: var(--font-color-focus3);
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+}

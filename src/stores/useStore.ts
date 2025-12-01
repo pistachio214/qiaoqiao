@@ -1,17 +1,25 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage, devtools } from 'zustand/middleware'
-import { Option } from '@/types/option';
+
 import { ageOptions, sexOptions } from '@/lib/data';
+import { Option } from '@/types/option';
+import { ChatConnectOtherMate, MessageItem } from '@/types/message';
 
 interface AppState {
     mate: {
         age: Option,
         sex: Option,
     }
+    connect: {
+        otherMate: ChatConnectOtherMate,
+        messageList: MessageItem[]
+    }
 
     // Actions
     updateMateAge: (age: Option) => void
     updateMateSex: (sex: Option) => void
+    setConnect: (otherMate: ChatConnectOtherMate) => void
+    clearConnect: () => void
     reset: () => void
 }
 
@@ -20,8 +28,17 @@ const getDefaultInitialState = () => ({
     mate: {
         age: ageOptions[0],
         sex: sexOptions[0],
+    },
+    connect: {
+        otherMate: {
+            age: { label: '', value: 0 },
+            sex: { label: '', value: 0 },
+            location: '',
+            tag: []
+        },
+        messageList: []
     }
-})
+});
 
 const useAppStore = create<AppState>()(
     devtools(
@@ -33,6 +50,18 @@ const useAppStore = create<AppState>()(
                 })),
                 updateMateSex: (sex: Option) => set((state) => ({
                     mate: { ...state.mate, sex }
+                })),
+                setConnect: (otherMate: ChatConnectOtherMate) => set(() => ({
+                    connect: {
+                        otherMate,
+                        messageList: []
+                    }
+                })),
+                clearConnect: () => set((state) => ({
+                    connect: {
+                        ...state.connect,
+                        ...getDefaultInitialState().connect
+                    }
                 })),
                 reset: () => set(getDefaultInitialState()),
             }),
@@ -52,6 +81,7 @@ const useAppStore = create<AppState>()(
                 // 可选：只持久化部分状态
                 partialize: (state) => ({
                     mate: state.mate,
+                    connect: state.connect,
                 }),
             }
         )

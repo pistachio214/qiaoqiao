@@ -7,9 +7,10 @@ export const metadata: Metadata = {
 
 export default function ChatLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <Container className="flex-1 flex" sx={{
+        <Container sx={{
             paddingLeft: 0,
             paddingRight: 0,
+            border: '1px solid blue',
         }}>
             {children}
         </Container>

@@ -7,7 +7,7 @@ import styles from './page.module.scss';
 
 export default function Chat() {
     return (
-        <Paper className={`flex flex-1 items-center justify-center ${styles.wrapper}`}>
+        <Paper className={`flex-1 flex items-center justify-center ${styles.wrapper}`}>
             <ChatContainer />
         </Paper>
     )

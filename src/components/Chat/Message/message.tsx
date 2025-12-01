@@ -1,54 +1,63 @@
 'use client'
 
+import {
+    useEffect, useEffectEvent, useRef, useState
+} from 'react';
+
 import { Box } from '@mui/material';
 
+import OtherMessageItem from './Item/OtherMessageItem';
+import MeMessageItem from './Item/MeMessageItem';
+import OutMessage from './Out/out';
+import { UserCard } from '../UserCard/UserCard';
+
+import { MessageItem } from '@/types/message';
+
+import useAppStore from '@/stores/useStore';
+
 import styles from './message.module.scss';
-import { useEffect, useRef, useState } from 'react';
-
-const MeMessage = (props: { message: string }) => {
-    return (
-        <Box className={`${styles.messageItem} ${styles.myMessage}`}>
-            我的: {props.message}
-        </Box>
-    )
-}
-
-const OtherMessage = (props: { message: string }) => {
-    return (
-        <Box className={`${styles.messageItem} ${styles.otherMessage}`}>
-            对方的: {props.message}
-        </Box>
-    )
-}
 
 export const ChatMessage = () => {
+
     const messageBoxRef = useRef<HTMLDivElement>(null);
 
-    const [messageList, setMessageList] = useState<number[]>([]);
+    const { connect } = useAppStore();
+
+    const [messageList, setMessageList] = useState<MessageItem[]>([]);
+
+    const scrollToBottom = useEffectEvent(() => {
+        if (messageBoxRef != null && messageBoxRef.current) {
+            // 滚动到聊天界面最后一条
+            messageBoxRef.current.scrollTop = messageBoxRef.current.scrollHeight;
+        }
+    })
 
     useEffect(() => {
-        const data = Array.from({ length: 150 }, ((_, i: number) => i));
+        const data: MessageItem[] = Array.from({ length: 5 }, ((_, i: number) => {
+            return {
+                sender: i % 2 === 0 ? 1 : 2, type: 1, text: `message - - - ${i}`, createdAt: new Date()
+            };
+        }));
         setMessageList(data);
     }, [])
 
     useEffect(() => {
-        if (messageBoxRef != null && messageBoxRef.current && messageList.length > 0) {
-            // 滚动到聊天界面最后一条
-            messageBoxRef.current.scrollTop = messageBoxRef.current.scrollHeight;
-        }
+        scrollToBottom();
     }, [messageList])
 
     return (
         <Box component={'div'} className={styles.messageBox} ref={messageBoxRef}>
+            <UserCard />
             {
-                messageList.map((v: number, index: number) => {
-                    if (v % 2 == 0) {
-                        return <OtherMessage key={index} message={`${v}`} />
+                connect.messageList.map((v: MessageItem, index: number) => {
+                    if (v.sender === 2) {
+                        return <OtherMessageItem key={index} {...v} />
                     } else {
-                        return <MeMessage key={index} message={`${v}`} />
+                        return <MeMessageItem key={index} {...v} />
                     }
                 })
             }
+            <OutMessage />
         </Box>
     );
 }
