@@ -2,7 +2,7 @@
 
 import { Box, Button } from "@mui/material";
 
-import useAppStore from "@/stores/useStore";
+import useAppStore from "@/stores/useAppStore";
 import { ageOptions, sexOptions } from "@/lib/data";
 
 import styles from './EnterChat.module.scss';

@@ -3,7 +3,7 @@
 import { Box, Typography } from "@mui/material";
 import { LocationOn, Person, Sell } from "@mui/icons-material";
 
-import useAppStore from "@/stores/useStore";
+import useAppStore from "@/stores/useAppStore";
 
 import styles from './user-card.module.scss';
 

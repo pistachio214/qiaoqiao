@@ -13,7 +13,7 @@ import { UserCard } from '../UserCard/UserCard';
 
 import { MessageItem } from '@/types/message';
 
-import useAppStore from '@/stores/useStore';
+import useAppStore from '@/stores/useAppStore';
 
 import styles from './message.module.scss';
 

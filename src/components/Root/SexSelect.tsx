@@ -10,7 +10,7 @@ import {
 import { FemaleOutlined, MaleOutlined } from "@mui/icons-material";
 
 import classNames from "classnames";
-import useAppStore from "@/stores/useStore";
+import useAppStore from "@/stores/useAppStore";
 import { Option } from "@/types/option";
 import { ageOptions, sexOptions } from "@/lib/data";
 
