@@ -54,7 +54,28 @@ const useAppStore = create<AppState>()(
                 setConnect: (otherMate: ChatConnectOtherMate) => set(() => ({
                     connect: {
                         otherMate,
-                        messageList: []
+                        messageList: [
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                        ]
                     }
                 })),
                 clearConnect: () => set((state) => ({
@@ -66,7 +87,7 @@ const useAppStore = create<AppState>()(
                 reset: () => set(getDefaultInitialState()),
             }),
             {
-                name: 'app-storage', // localStorage 的 key
+                name: 'QiaoQiaoStorage', // localStorage 的 key
                 storage: createJSONStorage(() => {
                     // 在服务端返回一个模拟的存储
                     if (typeof window === 'undefined') {
