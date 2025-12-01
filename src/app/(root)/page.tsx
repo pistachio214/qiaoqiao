@@ -11,7 +11,7 @@ import styles from './page.module.scss';
 export default function Home() {
 
   return (
-    <Paper elevation={0} component={'div'} className={`flex-1 flex flex-col ${styles.wrapper}`}>
+    <Paper elevation={0} component={'div'} className={`flex flex-col ${styles.wrapper}`}>
       <Container className="flex-1 flex flex-col justify-between">
 
         <Box className={styles['title-logo']}>

@@ -42,6 +42,21 @@ body {
 
 html,
 body {
+  /* height: -webkit-fill-available;
+  overscroll-behavior-y: none; */
+
   height: -webkit-fill-available;
   overscroll-behavior-y: none;
+  
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* 禁止页面级滚动 */
+  overflow: hidden; 
+  /* 彻底固定，防止回弹 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

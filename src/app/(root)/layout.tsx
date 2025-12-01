@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import {
     AppBar, Container, Drawer, IconButton, Typography, Toolbar, Box,
@@ -17,9 +17,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
     const [open, setOpen] = useState(false);
 
+    const [windowsHeight, setWindowsHeight] = useState<string>('100%');
+
     const toggleDrawer = (newOpen: boolean) => {
         setOpen(newOpen);
     };
+
+    useEffect(() => {
+        // const screenHeight = window.innerHeight;
+        // console.log(screenHeight); // 输出当前屏幕高度
+
+        if (window.visualViewport) {
+            setWindowsHeight(`${window.visualViewport.height}px`);
+        } else {
+            setWindowsHeight(`${window.innerHeight}px`);
+        }
+    }, []);
 
     const DrawerList = (
         <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(false)}>
@@ -54,11 +67,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <>
             <Box
-                className='flex flex-col'
                 sx={{
                     flexGrow: 1,
-                    minHeight: '-webkit-fill-available',
-                    height: '100vh',
+                    height: `${windowsHeight}`,
+                    width: '100vw',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    position: 'fixed',
                 }}
             >
                 <AppBar position="static" elevation={0} color='transparent'>
@@ -95,10 +110,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
                 <Container
                     component={'div'}
-                    className='flex-1 flex'
+                    className='flex'
                     sx={{
                         paddingLeft: 0,
                         paddingRight: 0,
+                        height: '100%',
                     }}
                 >
                     {children}
