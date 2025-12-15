@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 
 import ViewportHeightProvider from '@/components/ViewportHeightProvider';
+import AnimatedStars from "@/components/AnimatedStars/AnimatedStars";
 
 import "./globals.css";
-import AnimatedStars from "@/components/AnimatedStars/AnimatedStars";
 
 // Roboto 字体无需依赖 Google Fonts 直连（Next.js 会自动优化）
 const roboto = Roboto({
@@ -32,6 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="zh-CN" className={roboto.variable}>
       <body className="bg-(--color-body)">
+        {/* 满天星特效 */}
         <AnimatedStars />
         {/* 🔴 引入客户端组件处理视口高度 */}
         <ViewportHeightProvider>
