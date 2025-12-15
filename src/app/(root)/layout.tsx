@@ -12,11 +12,11 @@ import Footer from "@/components/Footer";
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 
   return (
-    <Card className={`h-full rounded-none bg-transparent flex justify-between border-none`}>
+    <Card className={`h-full rounded-none bg-transparent flex justify-between border-none overflow-y-auto`}>
       <CardHeader>
         <div className={'flex justify-between items-center h-15 text-white'}>
           <div className={'w-20 h-full flex justify-center items-center'}>
-            <SidebarCustomTrigger />
+            <SidebarCustomTrigger className={'md:hidden'} />
           </div>
           <div>Qiaoqiao</div>
           <div>
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </div>
       </CardHeader>
 
-      <CardContent className="border border-blue-400 h-full">
+      <CardContent className="h-full">
         {children}
       </CardContent>
 

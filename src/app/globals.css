@@ -13,8 +13,9 @@
   /* --mui-palette-background-paper: transparent; */
   --mui-palette-text-primary: #ffffff;
   --online-color: #0fef33;
-  --card: #333333;
+  --sex-card: #333333;
   --card-active: rgba(0, 246, 157, 0.6);
+  --card-board: #222222;
   --chat-receive-bg: rgba(128, 124, 124, 0.3);
   --chat-board-bg: rgba(55, 55, 55, 0.3);
 
