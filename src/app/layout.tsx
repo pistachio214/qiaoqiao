@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 
+import ViewportHeightProvider from '@/components/ViewportHeightProvider';
+
 import "./globals.css";
 
 // Roboto 字体无需依赖 Google Fonts 直连（Next.js 会自动优化）
@@ -25,10 +27,17 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+
   return (
-    <html lang="en" className={roboto.variable}>
-      <body className={`antialiased`}>
-        {children}
+    <html lang="zh-CN" className={roboto.variable}>
+      <body>
+        {/* 🔴 引入客户端组件处理视口高度 */}
+        <ViewportHeightProvider>
+          {/* 页面内容容器 */}
+          <div className="app-container">{children}</div>
+        </ViewportHeightProvider>
+
+        {/*  */}
       </body>
     </html>
   );
