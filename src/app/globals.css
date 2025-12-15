@@ -3,6 +3,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  --color-page: #141414;
+  --color-body: #000;
+  /* --background: #ffffff; */
+  --background: #000;
+  --foreground: #171717;
+  /* --mui-palette-background-paper: transparent; */
+  --mui-palette-text-primary: #ffffff;
+  --online-color: #0fef33;
+  --card: #333333;
+  --card-active: rgba(0, 246, 157, 0.6);
+  --chat-receive-bg: rgba(128, 124, 124, 0.3);
+  --chat-board-bg: rgba(55, 55, 55, 0.3);
+
+  --font-color-focus: hsla(0, 4%, 76%, 0.9);
+  --font-color-focus3: hsla(0, 0%, 100%, 0.7);
+  --font-color-tip: hsla(55, 6%, 61%, 0.5);
+
+  --radio-unchecked-color: #555555;
+  --radio-checked-color: #00f69d;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +46,7 @@ body {
   -webkit-overflow-scrolling: touch; /* iOS 滚动优化 */
   touch-action: auto; /* 恢复内容容器触摸滚动 */
   transform: translateZ(0); /* 硬件加速 */
+  z-index: inherit;
 }
 
 @theme inline {

@@ -8,13 +8,13 @@ import {
 
 export function AppSidebar() {
     return (
-        <Sidebar>
-            <SidebarHeader children={<>侧边栏</>}/>
-            <SidebarContent>
+        <Sidebar className={'bg-(--color-page) border border-blue-500'}>
+            {/* <SidebarHeader children={<>侧边栏</>}/> */}
+            <SidebarContent className="bg-(--color-page)">
                 <SidebarGroup />
                 <SidebarGroup />
             </SidebarContent>
-            <SidebarFooter />
+            {/* <SidebarFooter children={<>底部栏 Footer</>} /> */}
         </Sidebar>
     )
 }

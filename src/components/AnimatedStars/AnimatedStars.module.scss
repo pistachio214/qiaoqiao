@@ -1,0 +1,43 @@
+/* 简化动画，优先确保可见 */
+.starContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    perspective: 500px;
+    /* 降低景深，效果更明显 */
+    z-index: -1;
+    background: #000;
+    /* 加黑色背景，对比星星 */
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform, opacity;
+    transform-style: preserve-3d;
+    /* 简化动画：只保留Z轴远近，先确保动起来 */
+    animation: starFloat linear infinite;
+    box-shadow: 0 0 6px yellow;
+    /* 加光晕，更容易看到 */
+}
+
+/* 关键帧简化：0%远 → 50%中 → 100%近 */
+@keyframes starFloat {
+    0% {
+        transform: translateZ(-300px);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateZ(200px);
+        opacity: 0;
+    }
+}

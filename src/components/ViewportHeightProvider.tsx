@@ -33,10 +33,10 @@ export default function ViewportHeightProvider({ children }: { children: React.R
     }, []); // 空依赖：仅在组件挂载/卸载时执行
 
     return (
-        <SidebarProvider>
+        <SidebarProvider >
             <AppSidebar />
-            <main>
-                <SidebarTrigger />
+            <main className={`w-full h-full`}>
+                {/* <SidebarTrigger className='border border-amber-300 md:hidden' /> */}
                 {children}
             </main>
         </SidebarProvider>
