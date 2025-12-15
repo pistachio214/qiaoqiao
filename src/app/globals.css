@@ -6,6 +6,7 @@
 :root {
   --color-page: #141414;
   --color-body: #000;
+  --popup-overlay-background-color: rgba(25, 25, 25, 0.5);
   /* --background: #ffffff; */
   --background: #000;
   --foreground: #171717;

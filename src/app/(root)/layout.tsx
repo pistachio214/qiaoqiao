@@ -1,28 +1,40 @@
+import { SidebarCustomTrigger } from "@/components/ui/sidebar";
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card"
+import { BoltIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 
   return (
-    <Card className={`h-full rounded-none bg-transparent `}>
-      <CardHeader className={'border border-red-500'}>
-        <CardTitle className="text-red-400">Card Title</CardTitle>
-        <div className="text-white">Center</div>
-        {/* <CardDescription>Card Description</CardDescription> */}
-        <CardAction className="text-red-400">Card Action</CardAction>
+    <Card className={`h-full rounded-none bg-transparent flex justify-between border-none`}>
+      <CardHeader>
+        <div className={'flex justify-between items-center h-15 text-white'}>
+          <div className={'w-20 h-full flex justify-center items-center'}>
+            <SidebarCustomTrigger />
+          </div>
+          <div>Qiaoqiao</div>
+          <div>
+            <div className={'w-20 h-full flex justify-center items-center'}>
+              <Button className={'size-7'} variant="ghost" size="icon">
+                <BoltIcon />
+              </Button>
+            </div>
+          </div>
+        </div>
       </CardHeader>
-      <CardContent>
-        <>{children}</>
+
+      <CardContent className="border border-blue-400 h-full">
+        {children}
       </CardContent>
+
       <CardFooter>
-        <p>Card Footer</p>
+        <Footer />
       </CardFooter>
     </Card>
   );

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 
 export default function ViewportHeightProvider({ children }: { children: React.ReactNode }) {
@@ -36,7 +36,6 @@ export default function ViewportHeightProvider({ children }: { children: React.R
         <SidebarProvider >
             <AppSidebar />
             <main className={`w-full h-full`}>
-                {/* <SidebarTrigger className='border border-amber-300 md:hidden' /> */}
                 {children}
             </main>
         </SidebarProvider>

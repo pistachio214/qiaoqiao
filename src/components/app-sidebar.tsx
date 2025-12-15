@@ -1,14 +1,12 @@
 import {
     Sidebar,
     SidebarContent,
-    SidebarFooter,
     SidebarGroup,
-    SidebarHeader,
 } from "@/components/ui/sidebar"
 
 export function AppSidebar() {
     return (
-        <Sidebar className={'bg-(--color-page) border border-blue-500'}>
+        <Sidebar className={'bg-(--color-page)'}>
             {/* <SidebarHeader children={<>侧边栏</>}/> */}
             <SidebarContent className="bg-(--color-page)">
                 <SidebarGroup />
