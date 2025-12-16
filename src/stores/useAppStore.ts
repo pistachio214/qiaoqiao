@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage, devtools } from 'zustand/middleware'
 
-import { ageOptions, sexOptions } from '@/lib/data';
 import { Option } from '@/types/option';
 import { ChatConnectOtherMate, MessageItem } from '@/types/message';
 
@@ -56,25 +55,25 @@ const useAppStore = create<AppState>()(
                         otherMate,
                         messageList: [
                             { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
-                            // { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: '你也hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 2, type: 1, text: 'hello', createdAt: new Date() },
+                            { sender: 1, type: 1, text: 'hello', createdAt: new Date() },
                         ]
                     }
                 })),
