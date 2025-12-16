@@ -16,12 +16,12 @@ bun dev
 
 ## 项目截图
 
-![首页](./doc/home1.png "首页1")
+<img src="/doc/home1.png" width="430" height="932" alt="首页1" />
 
-![首页](./doc/home2.png "首页2")
+<img src="/doc/home2.png" width="430" height="932" 
+alt="首页2" />
 
-![聊天页](./doc/chat1.png "聊天页")
-
+<img src="/doc/chat1.png" width="430" height="932" alt="聊天页" />
 
 ## 后续计划
 
