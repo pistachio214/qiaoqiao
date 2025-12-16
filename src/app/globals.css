@@ -8,11 +8,14 @@
   --color-body: #000;
   --popup-overlay-background-color: rgba(25, 25, 25, 0.5);
   --divider-color: hsla(0, 0%, 39%, 0.3);
-  --divider-text-margin: 8px 0;
+  --divider-text-margin: 2px 0;
   --divider-text-color: hsla(0, 0%, 86%, 0.5);
   --font-size-md: 14px;
   --font-color-place: hsla(0, 0%, 86%, 0.25);
   --font-color-hint1: hsla(0, 0%, 86%, 0.25);
+  --color-pop: #1e1e1e;
+  --button-primary-color: #00f69d;
+  --button-primary-text-color: #000;
   /* --background: #ffffff; */
   --background: #000;
   --foreground: #171717;

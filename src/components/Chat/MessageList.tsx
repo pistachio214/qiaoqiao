@@ -3,17 +3,18 @@
 import {
     useEffect, useEffectEvent, useRef, useState
 } from 'react';
+import UserInfo from './UserInfo';
 
 import useAppStore from '@/stores/useAppStore';
 import { MessageItem } from '@/types/message';
-import UserInfo from './UserInfo';
+
 
 const OtherMessageItem = (props: MessageItem) => {
     return (
         <div className="max-w-4/5 text-white select-none self-start"
             style={{
                 color: 'var(--font-color-focus3)',
-                padding: '0.6rem 1rem 0.6rem 1rem',
+                padding: '0.5rem 1rem 0.5rem 1rem',
                 backgroundColor: 'var(--chat-receive-bg)',
                 borderTopLeftRadius: '1.2rem',
                 borderTopRightRadius: '1.2rem',
@@ -32,7 +33,7 @@ const MeMessageItem = (props: MessageItem) => {
             style={{
                 backgroundColor: 'var(--card-active)',
                 color: 'var(--font-color-focus3)',
-                padding: '0.6rem 1rem 0.6rem 1rem',
+                padding: '0.5rem 1rem 0.5rem 1rem',
                 borderTopLeftRadius: '1.2rem',
                 borderTopRightRadius: '1.2rem',
                 borderBottomLeftRadius: '1.2rem',
@@ -69,7 +70,7 @@ export default function MessageList() {
     })
 
     useEffect(() => {
-        const data: MessageItem[] = Array.from({ length: 50 }, ((_, i: number) => {
+        const data: MessageItem[] = Array.from({ length: 5 }, ((_, i: number) => {
             return {
                 sender: i % 2 === 0 ? 1 : 2, type: 1, text: `message - - - ${i}`, createdAt: new Date()
             };
@@ -83,8 +84,8 @@ export default function MessageList() {
 
     return (
         <div
-            className="pl-4! pr-4! flex flex-col"
-            style={{ overflowY: 'scroll', height: 'calc(100% - 100px)' }}
+            className="pl-4! pr-4! pb-3! flex flex-col"
+            style={{ overflowY: 'scroll', height: 'calc(100% - 90px)' }}
             ref={messageBoxRef}
         >
             <UserInfo />

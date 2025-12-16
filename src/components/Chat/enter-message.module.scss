@@ -1,0 +1,13 @@
+.enterMessageInput {
+    border: none;
+    background-color: #333333;
+    color: #ffffff;
+    padding: .8rem;
+
+    &:focus {
+        outline: none;
+        box-shadow: none !important;
+        /* 若有过渡动画，取消过渡（可选） */
+        transition: none !important;
+    }
+}

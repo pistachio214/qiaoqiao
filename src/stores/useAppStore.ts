@@ -10,6 +10,7 @@ interface AppState {
         sex: Option,
     }
     connect: {
+        status: boolean,
         otherMate: ChatConnectOtherMate,
         messageList: MessageItem[]
     }
@@ -17,7 +18,7 @@ interface AppState {
     // Actions
     updateMateAge: (age: Option) => void
     updateMateSex: (sex: Option) => void
-    setConnect: (otherMate: ChatConnectOtherMate) => void
+    setConnect: (otherMate: ChatConnectOtherMate, status: boolean) => void
     clearConnect: () => void
     reset: () => void
 }
@@ -29,6 +30,7 @@ const getDefaultInitialState = () => ({
         sex: { label: '', value: 0 },
     },
     connect: {
+        status: true,
         otherMate: {
             age: { label: '', value: 0 },
             sex: { label: '', value: 0 },
@@ -50,8 +52,9 @@ const useAppStore = create<AppState>()(
                 updateMateSex: (sex: Option) => set((state) => ({
                     mate: { ...state.mate, sex }
                 })),
-                setConnect: (otherMate: ChatConnectOtherMate) => set(() => ({
+                setConnect: (otherMate: ChatConnectOtherMate, status: boolean) => set(() => ({
                     connect: {
+                        status,
                         otherMate,
                         messageList: [
                             { sender: 2, type: 1, text: 'hello', createdAt: new Date() },

@@ -1,4 +1,6 @@
+import EnterMessage from "@/components/Chat/EnterMessage";
 import MessageList from "@/components/Chat/MessageList";
+import { Button } from "@/components/ui/button";
 
 
 export default function Chat() {
@@ -7,9 +9,7 @@ export default function Chat() {
             <div className="h-full md:w-4/5 w-full flex flex-col overflow-hidden">
                 <MessageList />
 
-                <div style={{ height: '100px', border: '1px solid red', color: '#fff' }}>
-                    <div>输入</div>
-                </div>
+                <EnterMessage />
             </div>
 
         </>

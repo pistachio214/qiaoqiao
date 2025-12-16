@@ -49,7 +49,7 @@ export function AppSidebar() {
         <Sidebar>
             <SidebarContent className="bg-(--color-page) text-white pt-3! pb-3! pl-4! pr-4! box-border border-none!">
                 <SidebarGroup className="flex flex-col mb-3!">
-                    <div className="w-full cursor-pointer">
+                    <div className="w-full cursor-pointer select-none">
                         <div
                             className="rounded-lg p-3! flex flex-col justify-center overflow-hidden"
                             style={{
@@ -104,9 +104,8 @@ export function AppSidebar() {
                     <SidebarMenuItem
                         title={'晚晚'}
                         leftNode={
-                            <div className="w-full h-full flex justify-center items-center bg-white font-extrabold text-[11px]">
-                                <span style={{ color: 'rgb(11, 148, 246)' }}>F</span>
-                                <span style={{ color: 'rgb(11, 148, 246)' }}>M</span>
+                            <div className="w-full h-full flex justify-center items-center font-extrabold text-[11px]">
+                                <Image src={'/img/wanwan.png'} width={20} height={20} alt="" />
                             </div>
                         }
                         rightNode={
