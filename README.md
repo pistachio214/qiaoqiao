@@ -16,7 +16,7 @@ bun dev
 
 ## 项目截图
 
-<div style="display: flex; flex-direction:row; ">
+<div style="display: flex; flex-direction:row; gap: 12px;">
 <img src="/doc/home1.png" width="215" height="466" alt="首页1" />
 
 <img src="/doc/home2.png" width="215" height="466" alt="首页2" />
