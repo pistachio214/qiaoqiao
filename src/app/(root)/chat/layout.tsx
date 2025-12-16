@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <CardContent className="h-full overflow-hidden">
+        <CardContent className="h-full overflow-hidden flex justify-center">
             {children}
         </CardContent>
     );
