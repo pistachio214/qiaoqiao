@@ -7,6 +7,11 @@
   --color-page: #141414;
   --color-body: #000;
   --popup-overlay-background-color: rgba(25, 25, 25, 0.5);
+  --divider-color: hsla(0, 0%, 39%, .3);
+  --divider-text-margin: 8px 0;
+  --divider-text-color: hsla(0, 0%, 86%, .5);
+  --font-size-md: 14px;
+  --font-color-place: hsla(0, 0%, 86%, .25);
   /* --background: #ffffff; */
   --background: #000;
   --foreground: #171717;
@@ -165,7 +170,8 @@ body {
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    /* @apply border-border outline-ring/50; */
+    @apply outline-ring/50;
   }
 
   :root {
