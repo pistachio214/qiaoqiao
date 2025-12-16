@@ -1,5 +1,6 @@
 
 
+import { CardContent } from "@/components/ui/card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <div className="h-full flex flex-col items-center">
+        <CardContent className="h-full overflow-hidden">
             {children}
-        </div>
+        </CardContent>
     );
 }

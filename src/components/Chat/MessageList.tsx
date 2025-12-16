@@ -69,7 +69,7 @@ export default function MessageList() {
     })
 
     useEffect(() => {
-        const data: MessageItem[] = Array.from({ length: 5 }, ((_, i: number) => {
+        const data: MessageItem[] = Array.from({ length: 50 }, ((_, i: number) => {
             return {
                 sender: i % 2 === 0 ? 1 : 2, type: 1, text: `message - - - ${i}`, createdAt: new Date()
             };
@@ -83,8 +83,8 @@ export default function MessageList() {
 
     return (
         <div
-            className="p-4! flex flex-col gap-2"
-            style={{ overflowY: 'scroll', height: 'calc(100vh - 8rem)' }}
+            className="pl-4! pr-4! flex flex-col"
+            style={{ overflowY: 'scroll', height: 'calc(100% - 100px)' }}
             ref={messageBoxRef}
         >
             <UserInfo />

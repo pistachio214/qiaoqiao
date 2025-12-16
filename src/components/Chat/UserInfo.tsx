@@ -10,7 +10,7 @@ const UserInfo = () => {
             }}
         >
             <div>
-                <div className="flex items-center text-[1rem]">
+                <div className="flex items-center text-[.8rem]">
                     <div className="w-4 flex items-center justify-center mr-4!">
                         <UserRoundIcon size={20} />
                     </div>
@@ -18,14 +18,14 @@ const UserInfo = () => {
                     <div className="">26岁以上</div>
                 </div>
 
-                <div className="flex items-center text-[1rem] mt-1!">
+                <div className="flex items-center text-[.8rem] mt-1!">
                     <div className="w-4 flex items-center justify-center mr-4!">
                         <MapPinnedIcon size={20} />
                     </div>
                     <div className="mr-2!">山东省</div>
                 </div>
 
-                <div className="flex items-center text-[1rem] mt-1!">
+                <div className="flex items-center text-[.8rem] mt-1!">
                     <div className="w-4 flex items-center justify-center mr-4!">
                         <TagsIcon size={20} />
                     </div>
@@ -42,7 +42,7 @@ const UserInfo = () => {
                 style={{
                     backgroundColor: 'rgba(0, 0, 0, .38)',
                     color: 'var(--font-color-hint1)',
-                    fontSize: '.66rem'
+                    fontSize: '.6rem'
                 }}
             >
                 <span>绿色聊天，遵守秩序，本站24H进行举报内容审核</span>
