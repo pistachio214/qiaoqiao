@@ -1,4 +1,4 @@
-这是一个用Nextjs做的项目
+这是一个用 Nextjs 做的项目
 
 ## 项目开始
 
@@ -16,12 +16,14 @@ bun dev
 
 ## 项目截图
 
+<div style="display: flex; flex-direction:row; ">
 <img src="/doc/home1.png" width="215" height="466" alt="首页1" />
 
 <img src="/doc/home2.png" width="215" height="466" alt="首页2" />
 
 <img src="/doc/chat1.png" width="215" height="466" alt="聊天页" />
+</div>
 
 ## 后续计划
 
-[] 完成后端api
+[] 完成后端 api
