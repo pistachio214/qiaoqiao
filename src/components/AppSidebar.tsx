@@ -98,6 +98,7 @@ export function AppSidebar() {
                                 <Image src={'/img/bottle.svg'} width={14} height={14} alt="" />
                             </div>
                         }
+                        onClick={() => location.href = '/bottle'}
                     />
 
                     <SidebarMenuItem
