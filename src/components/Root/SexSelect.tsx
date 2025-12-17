@@ -26,6 +26,34 @@ import { ageOptions, sexOptions } from "@/lib/data";
 import { Option } from "@/types/option";
 import { Button } from "../ui/button";
 
+interface SelectFormProps {
+    mate: {
+        age: Option,
+        sex: Option,
+    },
+    saveAge: (age: Option) => void
+}
+
+const SelectForm = (props: SelectFormProps) => {
+    return (
+        <div className="mt-4! mb-4! flex flex-col gap-2">
+            {
+                ageOptions.map((item: Option, index: number) => {
+                    return (
+                        <div
+                            key={index}
+                            className={`border ${props.mate.age.value === item.value ? 'border-(--radio-checked-color)' : 'border-(--radio-unchecked-color)'} p-2! text-(--font-color-focus)`}
+                            onClick={() => props.saveAge(item)}
+                        >
+                            {item.label}
+                        </div>
+                    )
+                })
+            }
+        </div>
+    );
+}
+
 const SexSelect = () => {
 
     const { mate, updateMateAge, updateMateSex } = useAppStore();
@@ -91,21 +119,7 @@ const SexSelect = () => {
                                 </DrawerDescription>
                             </DrawerHeader>
 
-                            <div className="mt-4! mb-4! flex flex-col gap-2">
-                                {
-                                    ageOptions.map((item: Option, index: number) => {
-                                        return (
-                                            <div
-                                                key={index}
-                                                className={`border ${mate.age.value === item.value ? 'border-(--radio-checked-color)' : 'border-(--radio-unchecked-color)'} p-2! text-(--font-color-focus)`}
-                                                onClick={() => saveAge(item)}
-                                            >
-                                                {item.label}
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                            <SelectForm mate={mate} saveAge={(item: Option) => saveAge(item)} />
                         </DrawerContent>
                     </Drawer >
                 )
@@ -124,21 +138,7 @@ const SexSelect = () => {
                                 </DialogDescription>
                             </DialogHeader>
 
-                            <div className="mt-4! mb-4! flex flex-col gap-2">
-                                {
-                                    ageOptions.map((item: Option, index: number) => {
-                                        return (
-                                            <div
-                                                key={index}
-                                                className={`border ${mate.age.value === item.value ? 'border-(--radio-checked-color)' : 'border-(--radio-unchecked-color)'} p-2! text-(--font-color-focus)`}
-                                                onClick={() => saveAge(item)}
-                                            >
-                                                {item.label}
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                            <SelectForm mate={mate} saveAge={(item: Option) => saveAge(item)} />
                         </DialogContent>
                     </Dialog >
                 )

@@ -1,0 +1,59 @@
+.formContainer {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    .formInput {
+        padding: calc(var(--spacing) * 2);
+        background-color: #333;
+        border-radius: 20px;
+
+        .input {
+            border: none;
+            background-color: transparent;
+            color: #ffffff;
+            padding: 0.8rem;
+            outline: none;
+            box-shadow: none;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+                /* 若有过渡动画，取消过渡（可选） */
+                transition: none;
+            }
+        }
+    }
+
+    .subContainer {
+        margin-top: 2rem;
+
+        .subBtn {
+            padding: 1rem;
+            border-radius: 2rem;
+            background-color: var(--button-primary-color);
+            display: flex;
+            justify-content: center;
+
+            // 仅桌面端生效 hover
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    background-color: var(--online-color);
+                }
+            }
+
+            // 移动端点击反馈（:active 仅触摸按下时生效，松开即还原）
+            &:active {
+                background-color: var(--online-color);
+            }
+
+            // 兜底：清除聚焦状态残留
+            &:focus,
+            &:focus-visible {
+                background-color: var(--button-primary-color);
+            }
+
+        }
+    }
+}

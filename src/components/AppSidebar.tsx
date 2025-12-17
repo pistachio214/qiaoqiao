@@ -8,6 +8,7 @@ import {
     SidebarGroup,
 } from "@/components/ui/sidebar";
 import { Switch } from "@/components/ui/switch"
+import SidebarUserInfo from "./Root/SidebarUserInfo";
 
 
 interface SidebarMenuItemProps {
@@ -57,27 +58,7 @@ export function AppSidebar() {
         <Sidebar>
             <SidebarContent className="bg-(--color-page) text-white pt-3! pb-3! pl-4! pr-4! box-border border-none!">
                 <SidebarGroup className="flex flex-col mb-3!">
-                    <div className="w-full cursor-pointer select-none">
-                        <div
-                            className="rounded-lg p-3! flex flex-col justify-center overflow-hidden"
-                            style={{
-                                background: 'linear-gradient(to right bottom, rgb(11, 232, 114), rgb(83, 4, 195))',
-                                boxShadow: '8px 10px 5px 1px hsla(0, 0%, 4% .15)'
-                            }}
-                        >
-                            <div className="text-[1.1rem] font-extrabold text-(--font-color-focus)">
-                                登录
-                            </div>
-
-                            <div
-                                className="mt-2! mb-1! text-[.7rem] font-normal"
-                                style={{ color: 'hsla(0, 0%, 100%, .8)' }}
-                            >
-                                新用户首次充值
-                                <span className="font-semibold">买一送一</span>
-                            </div>
-                        </div>
-                    </div>
+                    <SidebarUserInfo />
                 </SidebarGroup>
 
                 <SidebarGroup className="flex flex-col">
