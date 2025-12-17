@@ -1,10 +1,8 @@
-
-
-import { CardContent } from "@/components/ui/card";
 import { Metadata } from "next";
+import { CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-    title: "在线聊天",
+    title: "在线聊天 - 悄悄",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
