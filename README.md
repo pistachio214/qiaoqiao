@@ -22,6 +22,8 @@ bun dev
 <img src="/doc/home2.png" width="215" height="466" alt="首页2" />
 
 <img src="/doc/chat1.png" width="215" height="466" alt="聊天页" />
+
+<img src="/doc/bottle1.png" width="215" height="466" alt="漂流瓶" />
 </div>
 
 ## 后续计划
