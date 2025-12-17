@@ -2,10 +2,10 @@ import { Metadata } from "next";
 import { CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-    title: "在线聊天 - 悄悄",
+    title: "漂流瓶 - 悄悄",
 };
 
-export default function ChatLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function BottleLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <CardContent className="h-full overflow-hidden flex justify-center">
             {children}
