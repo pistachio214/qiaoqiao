@@ -14,11 +14,19 @@ interface SidebarMenuItemProps {
     title: string,
     leftNode: React.ReactNode,
     rightNode?: React.ReactNode,
+    onClick?: () => void
 }
 
 const SidebarMenuItem = (props: SidebarMenuItemProps) => {
     return (
-        <div className="w-full flex flex-row items-center pt-3! pb-3! cursor-pointer">
+        <div
+            className="w-full flex flex-row items-center pt-3! pb-3! cursor-pointer select-none"
+            onClick={() => {
+                if (props.onClick !== undefined) {
+                    props.onClick()
+                }
+            }}
+        >
             <div className="w-5 h-5 rounded-sm overflow-hidden flex justify-center items-center mr-3!">
                 {props.leftNode}
             </div>
@@ -80,6 +88,7 @@ export function AppSidebar() {
                                 <Image src={'/logo.svg'} loading={'eager'} width={18} height={18} alt="" />
                             </div>
                         }
+                        onClick={() => location.href = '/'}
                     />
 
                     <SidebarMenuItem
