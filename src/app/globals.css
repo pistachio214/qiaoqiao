@@ -16,6 +16,9 @@
   --color-pop: #1e1e1e;
   --button-primary-color: #00f69d;
   --button-primary-text-color: #000;
+  --button-default-text-color: hsla(0, 0%, 94%, .9);
+  --button-default-color: #333;
+  --button-border-radius: 100px;
   /* --background: #ffffff; */
   --background: #000;
   --foreground: #171717;
@@ -45,8 +48,10 @@
 html,
 body {
   height: 100%;
-  overflow: hidden; /* 禁止全局回弹 */
-  touch-action: none; /* 禁用 iOS 全局触摸滚动 */
+  overflow: hidden;
+  /* 禁止全局回弹 */
+  touch-action: none;
+  /* 禁用 iOS 全局触摸滚动 */
 }
 
 /* 核心：使用 CSS 变量适配高度，兜底 dvh */
@@ -54,11 +59,13 @@ body {
   height: var(--vh, 100dvh);
   width: 100%;
   /* 仅内容容器滚动 */
-  overflow-y: auto; 
+  overflow-y: auto;
   /* iOS 滚动优化 */
-  -webkit-overflow-scrolling: touch; 
-  touch-action: auto; /* 恢复内容容器触摸滚动 */
-  transform: translateZ(0); /* 硬件加速 */
+  -webkit-overflow-scrolling: touch;
+  touch-action: auto;
+  /* 恢复内容容器触摸滚动 */
+  transform: translateZ(0);
+  /* 硬件加速 */
   z-index: inherit;
 }
 

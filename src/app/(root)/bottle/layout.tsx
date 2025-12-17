@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function BottleLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <CardContent className="h-full overflow-hidden flex justify-center border border-red-500">
+        <CardContent className="h-full overflow-hidden flex justify-center">
             {children}
         </CardContent>
     );

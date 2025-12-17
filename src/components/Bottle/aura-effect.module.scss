@@ -1,0 +1,68 @@
+// 扩散容器
+.auraContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0%;
+
+    // 扩散中心
+    .coreElement {
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+        background: linear-gradient(20deg, #91ffe4, #0dffa6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 900;
+        border-radius: 120px;
+        z-index: 1;
+    }
+
+    // 光圈基础样式
+    .auraLayer {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(0, 246, 157, 0.3);
+        animation: aura-expand 4s infinite ease-out;
+        pointer-events: none;
+        /* 避免遮挡核心元素点击 */
+    }
+
+    /* 多层光圈：错开大小和延迟，实现连续扩散 */
+    .layerOne {
+        width: 70px;
+        height: 70px;
+        animation-delay: 0s;
+    }
+
+    .layerTwo {
+        width: 70px;
+        height: 70px;
+        animation-delay: 1s;
+    }
+
+    .layerThree {
+        width: 70px;
+        height: 70px;
+        animation-delay: 2s;
+    }
+
+    /* 扩散动画关键帧：缩放 + 透明度消失 */
+    @keyframes aura-expand {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(4);
+            /* 扩散到4倍大小 */
+            opacity: 0;
+        }
+    }
+}
