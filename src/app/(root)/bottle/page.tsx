@@ -2,9 +2,11 @@ import { SendIcon, SquareEqualIcon } from "lucide-react";
 
 import AuraEffect from "@/components/Bottle/AuraEffect";
 
+import PageTransition from '@/components/PageTransition';
+
 export default function Bottle() {
     return (
-        <div className="text-white h-full md:w-4/5 w-full flex flex-col overflow-hidden p-4!">
+        <PageTransition className="text-white h-full md:w-4/5 w-full flex flex-col overflow-hidden p-4!">
             <div className="h-full w-full flex flex-col items-center">
                 <AuraEffect />
 
@@ -34,6 +36,6 @@ export default function Bottle() {
                     </div>
                 </div>
             </div>
-        </div>
+        </PageTransition>
     );
 }

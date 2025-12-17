@@ -26,7 +26,6 @@ import { ageOptions, sexOptions } from "@/lib/data";
 import { Option } from "@/types/option";
 import { Button } from "../ui/button";
 
-
 const SexSelect = () => {
 
     const { mate, updateMateAge, updateMateSex } = useAppStore();

@@ -3,6 +3,7 @@ import { persist, createJSONStorage, devtools } from 'zustand/middleware'
 
 import { Option } from '@/types/option';
 import { ChatConnectOtherMate, MessageItem } from '@/types/message';
+import { ageOptions, sexOptions } from '@/lib/data';
 
 interface AppState {
     mate: {
@@ -26,8 +27,8 @@ interface AppState {
 // 在服务端安全的初始化函数
 const getDefaultInitialState = () => ({
     mate: {
-        age: { label: '', value: 0 },
-        sex: { label: '', value: 0 },
+        age: ageOptions[0],
+        sex: sexOptions[0],
     },
     connect: {
         status: true,

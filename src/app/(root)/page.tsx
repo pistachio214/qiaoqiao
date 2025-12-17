@@ -8,12 +8,13 @@ import {
 import EnterChat from "@/components/Root/EnterChat";
 import SexSelect from "@/components/Root/SexSelect";
 import Footer from "@/components/Footer";
+import PageTransition from '@/components/PageTransition';
 
 export default function Home() {
   return (
     <>
       <CardContent className="h-full mb-5!">
-        <div className={'text-white h-full flex flex-col items-center justify-between'}>
+        <PageTransition className={'text-white h-full flex flex-col items-center justify-between'}>
           <div className={'flex flex-col items-center'}>
             <Image src={'/logo.svg'} alt="logo" loading="eager" width={120} height={120} />
             <div className={'flex flex-row justify-center items-center'}>
@@ -28,13 +29,12 @@ export default function Home() {
           <SexSelect />
 
           <EnterChat />
-        </div>
+        </PageTransition>
       </CardContent>
-
+      
       <CardFooter>
         <Footer />
       </CardFooter>
     </>
-
   );
 }
