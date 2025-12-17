@@ -84,8 +84,8 @@ export default function MessageList() {
 
     return (
         <div
-            className="pl-4! pr-4! pb-3! flex flex-col"
-            style={{ overflowY: 'scroll', height: 'calc(100% - 90px)' }}
+            className="pl-4! pr-4! pb-3! flex flex-col overflow-y-auto"
+            style={{ height: 'calc(100% - 90px)' }}
             ref={messageBoxRef}
         >
             <UserInfo />

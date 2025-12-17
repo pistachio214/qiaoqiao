@@ -25,13 +25,12 @@ export default function Home() {
               <span className={'pt-1.5 pb-1.5 text-xs text-(--font-color-focus)'}>1232131231 人正在匹配中</span>
             </div>
           </div>
-
+          {/* 性别和年龄选择 */}
           <SexSelect />
-
+          {/* 匹配 */}
           <EnterChat />
         </PageTransition>
       </CardContent>
-      
       <CardFooter>
         <Footer />
       </CardFooter>

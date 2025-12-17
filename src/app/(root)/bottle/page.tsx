@@ -20,7 +20,7 @@ export default function Bottle() {
                         }}
                     >
                         <SendIcon size={18} />
-                        <span className="">扔个瓶子</span>
+                        <span>扔个瓶子</span>
                     </div>
 
                     <div
@@ -32,7 +32,7 @@ export default function Bottle() {
                         }}
                     >
                         <SquareEqualIcon size={18} />
-                        <span className="">我的瓶子</span>
+                        <span>我的瓶子</span>
                     </div>
                 </div>
             </div>

@@ -137,6 +137,7 @@ export function AppSidebar() {
                         rightNode={
                             <div style={{ color: 'var(--font-color-place)', fontSize: '12px' }}>已选择0个</div>
                         }
+                        onClick={() => location.href = '/tag'}
                     />
 
                     <SidebarMenuItem

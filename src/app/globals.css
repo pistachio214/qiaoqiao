@@ -19,6 +19,7 @@
   --button-default-text-color: hsla(0, 0%, 94%, .9);
   --button-default-color: #333;
   --button-border-radius: 100px;
+  --font-color-focus1: hsla(0, 0%, 94%, .65);
   /* --background: #ffffff; */
   --background: #000;
   --foreground: #171717;
