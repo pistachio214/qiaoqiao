@@ -35,6 +35,8 @@
             background-color: var(--button-primary-color);
             display: flex;
             justify-content: center;
+            user-select: none;
+            -webkit-user-select: none;
 
             // 仅桌面端生效 hover
             @media (hover: hover) and (pointer: fine) {

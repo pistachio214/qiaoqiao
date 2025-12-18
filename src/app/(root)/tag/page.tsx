@@ -28,10 +28,7 @@ export default function Tag() {
             </div>
             
             <div className="w-full flex items-center justify-center" style={{ height: '100px' }}>
-                <div
-                    className='w-full p-3! flex justify-center items-center rounded-2xl text-black text-md font-medium select-none'
-                    style={{ backgroundColor: 'var(--button-primary-color)' }}
-                >
+                <div className='w-full p-3! flex justify-center items-center rounded-2xl text-black text-md font-medium select-none bg-(--button-primary-color) active:bg-(--online-color) md:hover:bg-(--online-color) focus:bg-(--button-primary-color) focus-visible:bg-(--button-primary-color)'>
                     保存(1/8)
                 </div>
             </div>
