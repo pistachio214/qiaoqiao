@@ -13,7 +13,7 @@ export default function Tag() {
                         return (
                             <div
                                 key={i}
-                                className={`self-start text-[.85rem] flex justify-center items-center cursor-pointer ${i === 2 ? 'bg-(--button-primary-color) text-black' : 'bg-[#333] text-(--font-color-focus1)'}`}
+                                className={`select-none self-start text-[.85rem] flex justify-center items-center cursor-pointer ${i === 2 ? 'bg-(--button-primary-color) text-black' : 'bg-[#333] text-(--font-color-focus1)'}`}
                                 style={{
                                     padding: '5px 10px',
                                     lineHeight: '.7rem',
@@ -29,7 +29,7 @@ export default function Tag() {
             
             <div className="w-full flex items-center justify-center" style={{ height: '100px' }}>
                 <div
-                    className='w-full p-3! flex justify-center items-center rounded-2xl text-black text-md font-medium'
+                    className='w-full p-3! flex justify-center items-center rounded-2xl text-black text-md font-medium select-none'
                     style={{ backgroundColor: 'var(--button-primary-color)' }}
                 >
                     保存(1/8)
