@@ -9,12 +9,15 @@ export default function EnterChat() {
 
     const goChat = () => {
         console.log('匹配信息: ', mate);
-        setConnect({
+
+        const otherMate = {
             age: ageOptions[0],
             sex: sexOptions[1],
             location: '成都市',
             tag: ['快乐小狗', '反差er', '人间清醒']
-        })
+        }
+        setConnect(otherMate, true);
+
         location.href = "/chat";
     }
 
